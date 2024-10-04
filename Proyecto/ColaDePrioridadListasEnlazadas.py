@@ -55,10 +55,23 @@ cola.enqueue(paciente5)
 print("Cola de pacientes:")
 cola.fisrt()
 
-print(cola.actualizar("ximena", 2))
-
 print("\nAtendiendo paciente:")
 print(cola.dequeue())
 
 print("\nCola de pacientes después de atender uno:")
+cola.fisrt()
+
+print("\nAtendiendo paciente:")
+print(cola.dequeue())
+
+print("\nAtendiendo paciente:")
+print(cola.dequeue())
+
+print("\nAtendiendo paciente:")
+print(cola.dequeue())
+
+print("\nAtendiendo paciente:")
+print(cola.dequeue())
+
+print("\nCola de pacientes:")
 cola.fisrt()
