@@ -3,6 +3,7 @@ class Node:
         self.value = value
         self.next = None
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -14,7 +15,6 @@ class LinkedList:
             nuevo_nodo.next = self.head
             self.head = nuevo_nodo
         else:
-
             actual = self.head
             while actual.next and actual.next.value.prioridad >= elemento.prioridad:
                 actual = actual.next

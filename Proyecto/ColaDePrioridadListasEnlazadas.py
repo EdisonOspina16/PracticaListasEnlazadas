@@ -15,6 +15,9 @@ class ColaPrioridad:
     def fisrt(self):
         self.lista_pacientes.mostrar()
 
+    def actualizar(self, nombre, nueva_prioridad):
+        return self.lista_pacientes.actualizar_prioridad(nombre, nueva_prioridad)
+
 
 class Paciente:
     def __init__(self, nombre: str, descripcion_consulta: str):
@@ -36,26 +39,29 @@ class Paciente:
         return f"Paciente: {self.nombre}, Prioridad: {self.prioridad}, Motivo: {self.descripcion_consulta}"
 
 
-# Ejemplo de uso:
+
 cola = ColaPrioridad()
 
-paciente1 = Paciente("Juan", "fiebre alta y tos")
-paciente2 = Paciente("María", "dolor agudo en el pecho")
-paciente3 = Paciente("Carlos", "revisión de rutina")
-paciente4 = Paciente("Ana", "fractura en el brazo")
-paciente5 = Paciente("Ana", "fractura en el brazo")
+paciente1 = Paciente("juan", "fiebre alta y tos")
+paciente2 = Paciente("maria", "dolor agudo en el pecho")
+paciente3 = Paciente("carlos", "revisión de rutina")
+paciente4 = Paciente("ana", "fractura en el brazo")
+paciente5 = Paciente("ximena", "corazon roto en busca de control")
+
 
 cola.enqueue(paciente1)
 cola.enqueue(paciente2)
 cola.enqueue(paciente3)
 cola.enqueue(paciente4)
+cola.enqueue(paciente5)
 
 print("Cola de pacientes:")
 cola.fisrt()
+
+print(cola.actualizar("ximena", 2))
 
 print("\nAtendiendo paciente:")
 print(cola.dequeue())
 
 print("\nCola de pacientes después de atender uno:")
 cola.fisrt()
-
