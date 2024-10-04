@@ -15,9 +15,6 @@ class ColaPrioridad:
     def fisrt(self):
         self.lista_pacientes.mostrar()
 
-    def actualizar(self, nombre, nueva_prioridad):
-        return self.lista_pacientes.actualizar_prioridad(nombre, nueva_prioridad)
-
 
 class Paciente:
     def __init__(self, nombre: str, descripcion_consulta: str):
