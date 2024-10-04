@@ -6,24 +6,21 @@ class ColaPrioridad:
     def __init__(self):
         self.lista_pacientes = LinkedList()
 
-    def insertar(self, paciente):
-        """Inserta un paciente en la cola de prioridad."""
+    def enqueue(self, paciente):
         self.lista_pacientes.insertar(paciente)
 
-    def atender(self):
-        """Atiende al paciente con mayor prioridad."""
+    def dequeue(self):
         return self.lista_pacientes.atender()
 
-    def mostrar(self):
-        """Muestra todos los pacientes en la cola."""
+    def fisrt(self):
         self.lista_pacientes.mostrar()
 
 
 class Paciente:
     def __init__(self, nombre: str, descripcion_consulta: str):
-        self.nombre = nombre
-        self.descripcion_consulta = descripcion_consulta
-        self.prioridad = self.calcular_prioridad()
+        self.nombre: str = nombre
+        self.descripcion_consulta: str = descripcion_consulta
+        self.prioridad: int = self.calcular_prioridad()
 
     def calcular_prioridad(self) -> int:
         descripcion = self.descripcion_consulta.lower()
@@ -42,22 +39,23 @@ class Paciente:
 # Ejemplo de uso:
 cola = ColaPrioridad()
 
-
 paciente1 = Paciente("Juan", "fiebre alta y tos")
 paciente2 = Paciente("María", "dolor agudo en el pecho")
 paciente3 = Paciente("Carlos", "revisión de rutina")
 paciente4 = Paciente("Ana", "fractura en el brazo")
+paciente5 = Paciente("Ana", "fractura en el brazo")
 
-
-cola.insertar(paciente2)
-cola.insertar(paciente3)
-cola.insertar(paciente4)
+cola.enqueue(paciente1)
+cola.enqueue(paciente2)
+cola.enqueue(paciente3)
+cola.enqueue(paciente4)
 
 print("Cola de pacientes:")
-cola.mostrar()
+cola.fisrt()
 
 print("\nAtendiendo paciente:")
-print(cola.atender())
+print(cola.dequeue())
 
 print("\nCola de pacientes después de atender uno:")
-cola.mostrar()
+cola.fisrt()
+
