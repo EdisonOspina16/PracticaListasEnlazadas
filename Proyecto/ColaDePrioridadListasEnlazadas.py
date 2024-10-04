@@ -36,7 +36,6 @@ class Paciente:
         return f"Paciente: {self.nombre}, Prioridad: {self.prioridad}, Motivo: {self.descripcion_consulta}"
 
 
-
 cola = ColaPrioridad()
 
 paciente1 = Paciente("juan", "fiebre alta y tos")

@@ -31,6 +31,8 @@ class LinkedList:
         return paciente_atendido
 
     def mostrar(self):
+        if not self.head:
+            raise Exception("No hay pacientes en la cola.")
         actual = self.head
         while actual:
             print(actual.value)
